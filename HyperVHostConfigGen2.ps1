@@ -53,7 +53,7 @@ Configuration Main
 			SetScript =
 			{
 				$zipDownload = "https://techielassblogstorage.blob.core.windows.net/azurelab/gen2.zip"
-				$downloadedFile = "D:\HyperVLabVMs.zip"
+				$downloadedFile = "C:\Temp\HyperVLabVMs.zip"
 				$vmFolder = "C:\VM"
 				
                 New-Item -Path 'C:\Temp\' -Name 'folderscreated.txt' -ItemType 'file'
