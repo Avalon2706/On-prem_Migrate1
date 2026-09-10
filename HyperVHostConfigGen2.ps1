@@ -59,7 +59,7 @@ Configuration Main
                 New-Item -Path 'C:\Temp\' -Name 'folderscreated.txt' -ItemType 'file'
 			
 				Get-Partition -DriveLetter C |
-				Resize-Partition -Size 400GB
+				Resize-Partition -Size $supported.SizeMax
 				New-Item -Path 'C:\Temp' -ItemType Directory -Force
                 New-Item -Path 'C:\Temp\' -Name 'partitiondone.txt' -ItemType 'file'
 				Invoke-WebRequest $zipDownload -OutFile $downloadedFile
