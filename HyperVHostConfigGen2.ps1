@@ -56,7 +56,9 @@ Configuration Main
 				$downloadedFile = "D:\HyperVLabVMs.zip"
 				$vmFolder = "C:\VM"
                 New-Item -Path 'D:\' -Name 'folderscreated.txt' -ItemType 'file'
-				Resize-Partition -DiskNumber 0 -PartitionNumber 2 -Size (400GB)
+			#	Resize-Partition -DiskNumber 0 -PartitionNumber 2 -Size (400GB)
+				Get-Partition -DriveLetter C |
+				Resize-Partition -Size 400GB
                 New-Item -Path 'D:\' -Name 'partitiondone.txt' -ItemType 'file'
 				Invoke-WebRequest $zipDownload -OutFile $downloadedFile
                 New-Item -Path 'D:\' -Name 'downloadstarted.txt' -ItemType 'file'
