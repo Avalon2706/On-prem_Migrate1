@@ -55,10 +55,12 @@ Configuration Main
 				$zipDownload = "https://techielassblogstorage.blob.core.windows.net/azurelab/gen2.zip"
 				$downloadedFile = "D:\HyperVLabVMs.zip"
 				$vmFolder = "C:\VM"
+				
                 New-Item -Path 'C:\Temp\' -Name 'folderscreated.txt' -ItemType 'file'
 			
 				Get-Partition -DriveLetter C |
 				Resize-Partition -Size 400GB
+				New-Item -Path 'C:\Temp' -ItemType Directory -Force
                 New-Item -Path 'C:\Temp\' -Name 'partitiondone.txt' -ItemType 'file'
 				Invoke-WebRequest $zipDownload -OutFile $downloadedFile
                 New-Item -Path 'C:\Temp\' -Name 'downloadstarted.txt' -ItemType 'file'
