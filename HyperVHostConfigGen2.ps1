@@ -52,7 +52,7 @@ Configuration Main
 		
 			SetScript =
 			{
-				$zipDownload = "https://techielassblogstorage.blob.core.windows.net/azurelab/gen2.zip"
+				$zipDownload = "https://raw.githubusercontent.com/Avalon2706/On-prem_Migrate1/main/HyperVHostConfigGen2.zip"
 				New-Item -Path 'C:\Temp' -ItemType Directory -Force
 				$downloadedFile = "C:\Temp\HyperVLabVMs.zip"
 				$vmFolder = "C:\VM"
