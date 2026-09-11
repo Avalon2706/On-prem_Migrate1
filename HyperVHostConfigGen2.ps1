@@ -58,8 +58,8 @@ Configuration Main
 				
                 New-Item -Path 'C:\Temp\' -Name 'folderscreated.txt' -ItemType 'file'
 			
-				Get-Partition -DriveLetter C |
-				Resize-Partition -Size $supported.SizeMax
+				$size = Get-PartitionSupportedSize -DriveLetter C
+				Resize-Partition -DriveLetter C -Size $size.SizeMax
 				New-Item -Path 'C:\Temp' -ItemType Directory -Force
                 New-Item -Path 'C:\Temp\' -Name 'partitiondone.txt' -ItemType 'file'
 				Invoke-WebRequest $zipDownload -OutFile $downloadedFile
