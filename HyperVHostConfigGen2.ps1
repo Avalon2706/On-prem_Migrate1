@@ -53,14 +53,14 @@ Configuration Main
 			SetScript =
 			{
 				$zipDownload = "https://techielassblogstorage.blob.core.windows.net/azurelab/gen2.zip"
+				New-Item -Path 'C:\Temp' -ItemType Directory -Force
 				$downloadedFile = "C:\Temp\HyperVLabVMs.zip"
 				$vmFolder = "C:\VM"
 				
                 New-Item -Path 'C:\Temp\' -Name 'folderscreated.txt' -ItemType 'file'
 			
-				$size = Get-PartitionSupportedSize -DriveLetter C
-				Resize-Partition -DriveLetter C -Size $size.SizeMax
-				New-Item -Path 'C:\Temp' -ItemType Directory -Force
+				Write-Output "Skipping partition resize"
+				
                 New-Item -Path 'C:\Temp\' -Name 'partitiondone.txt' -ItemType 'file'
 				Invoke-WebRequest $zipDownload -OutFile $downloadedFile
                 New-Item -Path 'C:\Temp\' -Name 'downloadstarted.txt' -ItemType 'file'
